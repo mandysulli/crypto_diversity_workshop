@@ -49,5 +49,5 @@ i=1
 for i in $SAMPLES
 do
 echo $i
-kallisto quant -t 6 -b 100 --pseudobam -i sequences.kallisto_idx -o $output/$i $input/$i\_R1_pair_trim.fastq.gz $input/$i\_R2_pair_trim.fastq.gz
+kallisto quant -t 12 -b 100 --pseudobam -i sequences.kallisto_idx -o $output/$i $input/$i\_R1_pair_trim.fastq.gz $input/$i\_R2_pair_trim.fastq.gz
 done

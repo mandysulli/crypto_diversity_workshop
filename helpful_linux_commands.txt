@@ -1,0 +1,129 @@
+##helpful Unix commands:
+
+## print working directory - provides you with the file path of your current directory
+pwd
+
+##list command - to list everything in current directory
+ls
+
+##change directory 
+cd 
+
+##move back one directory
+cd ..
+
+## make a directory in the directory you are currently in
+mkdir 
+
+## view a file
+vi
+
+## to get out of file that you opened with vi
+:q! #then press enter 
+
+## create or edit a file
+nano
+
+## move a file 
+mv
+
+## cp a file
+cp
+
+## preview the specified number of lines at the top of a file
+head -n ##
+
+## preview the specified number of lines at the bottom of a file 
+tail -n ##
+
+## concatenate files - also reads from a file and gives its content as an output 
+cat 
+
+## see the jobs that you are running
+## will only show you running jobs 
+sq --me
+
+## gives you more information than the previous command
+## will also show you canceled jobs or completed jobs within the last 24 hours
+sacct-gacrc -X
+
+##Apparently you can use them together
+sq --me && sacct-gacrc -X
+
+## Will show you all jobs that you have run (or are running)
+sacct-gacrc -X -S
+
+##provide statistics related to efficiency of resource usage by a job
+seff
+
+## list files and gives all info about them
+ls -lht
+
+## to submit job
+sbatch shell_script_name.sh
+
+## to cancel a job
+scancel #job_number#
+
+## update time attached to file
+touch file.txt
+
+###count the number of lines in a file
+wc -l name.txt
+
+## count the number of reads in a fastq file
+echo $(cat name_of_file.fastq | wc -l)/4|bc
+
+## count the number of reads in a ZIPPED fastq file
+echo $(zcat name_of_file.fastq | wc -l)/4|bc
+
+##Defining a directory
+name='/file/path/to/directory/of/interest'
+
+###########to initiate an interactive session
+interact
+
+## see modules in the interactive session
+module list
+
+## can load modules into the interactive session directly
+## this is mostly to test ot debug scripts
+
+###################################################################
+##Transfer files into the cluster
+## -v is optional
+## -r for directories
+
+scp -v *.fastq /file/path/to/files/on/local/computer myid@txfer.gacrc.uga.edu:/file/path/to/where/you/want/file/on/cluster
+
+
+###################################################################
+##Run fastqc 
+
+#!/bin/bash
+#SBATCH --job-name=Fastqc
+#SBATCH --partition=batch
+#SBATCH --ntasks=1
+#SBATCH --mem=100mb
+#SBATCH --time=1:00:00
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=myid@uga.edu
+
+module load FastQC/0.11.9-Java-11
+
+#define directory
+output='/file/path/tp/where/you/want/file/on/cluster'
+
+#set directory 
+cd /file/path/to/working/directory
+
+fastqc -o $output/fastqc_outputs Sample_R1.fastq Sample_R2.fastq
+
+###################################################################
+##Transfer files into the cluster
+## -v is optional
+## -r for directories
+
+scp -v mandyh@txfer.gacrc.uga.edu:/file/path/to/where/you/want/file/on/cluster /file/path/to/files/on/local/computer

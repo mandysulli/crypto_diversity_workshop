@@ -11,7 +11,7 @@
 #SBATCH --mail-user=mandyh@uga.edu
 
 #set directory 
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/Raw_data
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/Raw_data
 
 ##loop through the samples and count the number of reads within each file
 ##zcat used for zipped files 

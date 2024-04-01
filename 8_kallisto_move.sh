@@ -17,7 +17,6 @@ cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 mkdir Kallisto_diversity_test_abundance_tsv
 mkdir Kallisto_diversity_test_pseudobam
 
-set -ueo pipefail
 SAMPLES="2_UKRC_10
 2_UKRC_11
 2_UKRC_2

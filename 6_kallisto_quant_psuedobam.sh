@@ -22,7 +22,6 @@ mkdir Kallisto_outputs
 input='/scratch/mandyh/crypto_diversity_test_04.01.2024/paired_trim_reads'
 output='/scratch/mandyh/crypto_diversity_test_04.01.2024/Kallisto_outputs'
 
-set -ueo pipefail
 SAMPLES="2_UKRC_10
 2_UKRC_11
 2_UKRC_2

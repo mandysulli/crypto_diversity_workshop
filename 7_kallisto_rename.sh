@@ -14,7 +14,6 @@
 #Set directory
 cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 
-set -ueo pipefail
 SAMPLES="2_UKRC_10
 2_UKRC_11
 2_UKRC_2

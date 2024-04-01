@@ -29,3 +29,10 @@ Second script - 1_count_raw.sh
 This loops through the samples and counts the raw reads in the fastq files
 
 Third script - 2_reformat_raw_read_counts.sh
+
+This reformats the reads so that they can be pasted into an excel sheet
+Uses a java program that was compiled with Java v13.0.2
+
+Fourth script - 3_trim.sh
+
+This script trims off the Nextera adapters and quality filters the reads.

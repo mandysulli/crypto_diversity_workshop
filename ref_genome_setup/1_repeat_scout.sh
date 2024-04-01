@@ -14,13 +14,16 @@
 module load RepeatScout/1.0.6-GCC-11.3.0
 module load Perl/5.34.1-GCCcore-11.3.0
 
+#changing to working directory
 cd /scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup
 
-input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
+#set directory
+input='/scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup/ref_genomes'
 
 ##Can only use one genome at a time, so I used our best genome
 
-set -ueo pipefail
+#set pipefail fille fail the whole job if one of the samples fail
+#set -ueo pipefail
 SAMPLES="C_andersoni_2
 C_baileyi
 C_cuniculus
@@ -46,5 +49,4 @@ build_lmer_table -sequence $input/$i\.fasta -freq output_lmer_$i\.frequency
 
 ## make fasta file with all kinds of repeats 
 RepeatScout -sequence $input/$i\.fasta -output output_repeats_$i\.fas  -freq output_lmer_$i\.frequency
-
 done

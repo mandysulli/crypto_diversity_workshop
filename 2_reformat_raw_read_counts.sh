@@ -14,7 +14,7 @@ module load Java/13.0.2
 #Using this version because it is the one that the program was compiled with - have to use the version that you compiled with
 
 #set directory 
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 
 java reformat_Read_Counts count_raw_27583715.out raw_read_counts_reformat.txt
 

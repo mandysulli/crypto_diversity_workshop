@@ -13,10 +13,9 @@
 
 module load RepeatMasker/4.1.5-foss-2022a
 
-cd /scratch/mandyh/crypto_diveristy_analysis_march2024/ref_genome_setup
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup
 
-
-input='/scratch/mandyh/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
+input='/scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup/ref_genomes'
 
 ##When one genome at a time
 
@@ -45,7 +44,8 @@ echo $i
 RepeatMasker $input/$i\.fasta  -lib output_repeats_$i\.fas
 done
 
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes
+##these commands are happening outside of the loop
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup/ref_genomes
 
 cat *.fasta.masked > 14_crypto_genomes.fasta.masked
 mv 14_crypto_genomes.fasta.masked ..

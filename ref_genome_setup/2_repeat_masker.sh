@@ -13,10 +13,10 @@
 
 module load RepeatMasker/4.1.5-foss-2022a
 
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup
+cd /scratch/mandyh/crypto_diveristy_analysis_march2024/ref_genome_setup
 
 
-input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
+input='/scratch/mandyh/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
 
 ##When one genome at a time
 

@@ -13,9 +13,8 @@
 
 module load RepeatScout/1.0.6-GCC-11.3.0
 module load Perl/5.34.1-GCCcore-11.3.0
-module load RepeatMasker/4.1.5-foss-2022a
 
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup
 
 input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
 

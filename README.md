@@ -17,8 +17,11 @@
  This script uses the repeats found in the previous step and masks the given genome using those repeats.
  It "masks" the repeats by converting the ACGT's to N
  
+ # Run StrainSort Curated
  
+0_kallisto_index.sh
  
- 
- 
- 
+ This script indexes our reference genomes to create a reference databse
+ We used the reference genomes that were not masked in this case
+
+

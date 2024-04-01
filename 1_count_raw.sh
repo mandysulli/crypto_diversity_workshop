@@ -47,7 +47,5 @@ echo $(zcat $i\.1.fq.gz|wc -l)/4|bc
 echo $(zcat $i\.2.fq.gz|wc -l)/4|bc
 done
 
-
-#example for checking one sample
 #echo $(zcat 2_UKRC_10.1.fq.gz|wc -l)/4|bc
 #echo $(zcat 2_UKRC_10.2.fq.gz|wc -l)/4|bc

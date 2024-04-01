@@ -16,4 +16,4 @@ module load Java/13.0.2
 #set directory 
 cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 
-java reformat_Read_Counts count_raw_27578837.out trim_read_counts_reformat.txt
+java reformat_Read_Counts count_trim_27600188.out trim_read_counts_reformat.txt

@@ -1,0 +1,102 @@
+---
+title: "Mandy_Kallisto_Visualization"
+author: "Mandy S."
+date: "2024-04-01"
+output: html_document
+---
+
+install.packages("tidyverse")
+install.packages("purrr")
+install.packages("dplyr")
+install.packages("magrittr")
+install.packages("viridis")
+install.packages("ggpubr")
+install.packages("ggpmisc")
+install.packages("ggthemes")
+install.packages("readr")
+install.packages("stringr")
+install.packages("fuzzyjoin")
+
+```{r}
+#Load Libraries
+
+library(tidyverse)
+library(magrittr)
+library(viridis)
+library(ggpubr)
+library(ggpmisc)
+library(ggthemes)
+library(readr)
+library(stringr)
+#library(fuzzyjoin)
+```
+
+```{r}
+#Load Data
+
+##Reference Genomes##
+reference_database <- read_tsv("Kallisto_key.tsv")
+```
+
+
+```{r}
+##Load in kallisto output##
+files <- fs::dir_ls("./Kallisto_diversity_no_mask_test_abundance_tsv", glob="*.tsv")
+
+#create a data frame with all files, named by their "source" file
+samples <- 
+  files %>% 
+  purrr::map_dfr(read_table, .id = "source", col_names = TRUE) %>%
+  drop_na()
+
+
+names(samples) = c("sample_id", "target_id", "length", "eff_length", "est_counts", "tpm") 
+```
+
+
+```{r}
+
+##If you have to fix something at this point, you will need to delete everything and start over
+
+##Adjust sample_id names 
+
+##cutting off file path from sample_id
+samples$sample_id <- stringr::str_replace(samples$sample_id, "./Kallisto_diversity_no_mask_test_abundance_tsv/", "")
+#cutting off _abundance.tsv from sample_id
+samples$sample_id <- stringr::str_replace(samples$sample_id, "_abundance.tsv", "")
+
+```
+
+
+```{r}
+
+sample_totals <- samples %>% select(-target_id, -length, -eff_length, -tpm) %>%
+  group_by(sample_id) %>%
+  summarize_if(is.numeric, sum) %>%
+  ungroup() %>%
+  rename(sample_total = est_counts)
+```
+
+```{r}
+samples_with_species <- samples %>% left_join(reference_database) %>%
+  select(-target_id) %>%
+  group_by(sample_id, species) %>%
+  summarize_if(is.numeric, sum) %>%
+  ungroup() %>%
+  left_join(sample_totals) %>%
+  mutate(percent = est_counts/sample_total*100)
+```
+
+
+
+```{r}
+samples_with_species %>% ggplot() +
+  geom_bar(aes(x = sample_id, y = percent, fill = species), stat = "identity")+
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 90, hjust =0.95, vjust = 0.2)) +
+  ggtitle("Estimated Abdundance of Cryptosporidium spp. Within Samples") +
+  xlab("Sample Name") + 
+  ylab("Estimated Abundance") +
+  labs(fill = "Species")
+```
+

@@ -14,7 +14,7 @@
 module load kallisto/0.48.0-gompi-2022a
 
 #Set directory
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 
 #define directory
 input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup'

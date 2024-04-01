@@ -12,7 +12,7 @@
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 #Set directory
-cd /scratch/mandyh/crypto_diversity_test_04.01.2024
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/Kallisto_outputs
 
 mkdir Kallisto_diversity_test_abundance_tsv
 mkdir Kallisto_diversity_test_pseudobam

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=reformat_raw_read_counts
-#SBATCH --partition=iob_p
+#SBATCH --partition=highmem_p
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=100mb

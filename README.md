@@ -36,3 +36,13 @@ Uses a java program that was compiled with Java v13.0.2
 Fourth script - 3_trim.sh
 
 This script trims off the Nextera adapters and quality filters the reads.
+
+
+Fifth script - 4_count_trim.sh
+
+Sixth script - 5_reformat_trim_read_count
+
+Seventh script - 6_kallisto_quant_psuedobam.sh
+
+Eigth script - 
+

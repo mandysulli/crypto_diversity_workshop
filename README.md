@@ -37,12 +37,16 @@ Fourth script - 3_trim.sh
 
 This script trims off the Nextera adapters and quality filters the reads.
 
-
 Fifth script - 4_count_trim.sh
+
+Script is set up the same as the script that counts the raw reads. 
+We want to count the trimmed reads to be sure that we are not loosing a large number of reads in during trimming and quality filtering.
 
 Sixth script - 5_reformat_trim_read_count
 
 Seventh script - 6_kallisto_quant_psuedobam.sh
 
-Eigth script - 
+Eight script - 7_kallisto_rename.sh
+
+Nineth script - 8_kallisto_move.sh
 

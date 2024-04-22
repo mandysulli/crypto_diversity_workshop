@@ -44,9 +44,13 @@ We want to count the trimmed reads to be sure that we are not loosing a large nu
 
 Sixth script - 5_reformat_trim_read_count
 
+This script reformats the reads from the previous script so that they are easily pasted into an excel sheet
+
 Seventh script - 6_kallisto_quant_psuedobam.sh
+
+This script uses Kallisto to quantify the estimated number of reads per reference genome. It 
 
 Eight script - 7_kallisto_rename.sh
 
-Nineth script - 8_kallisto_move.sh
+Ninth script - 8_kallisto_move.sh
 

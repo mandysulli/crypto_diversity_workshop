@@ -46,11 +46,17 @@ Sixth script - 5_reformat_trim_read_count
 
 This script reformats the reads from the previous script so that they are easily pasted into an excel sheet
 
-Seventh script - 6_kallisto_quant_psuedobam.sh
+Seventh script - 6_kallisto_quant_pseudobam.sh
 
-This script uses Kallisto to quantify the estimated number of reads per reference genome. It 
+This script uses Kallisto to quantify the estimated number of reads per reference genome. This is how we will get our estimated abundance values.
+It is also set up to give us a pseudobam file which is what we will use to separate the reads. 
+Outputs files into folder by sample (which is really inconvenient) .
 
 Eight script - 7_kallisto_rename.sh
 
+This script renames the output files to have there sample name included. This way we can move them together into one folder.
+
 Ninth script - 8_kallisto_move.sh
 
+This is the script that moves them all together.
+After this script you can export the abundance.tsv files out pf the cluster and use them with the R script provided to make estimated abundance figures.

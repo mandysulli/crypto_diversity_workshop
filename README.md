@@ -64,6 +64,9 @@ After this script you can export the abundance.tsv files out pf the cluster and 
 
 
 
+https://www.samformat.info/sam-format-flag
+
+
 
 ## Run R script
 To visualize the estimated abundance of your samples you will need:

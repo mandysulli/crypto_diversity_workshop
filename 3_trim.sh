@@ -49,5 +49,5 @@ i=1
 for i in $SAMPLES
 do
 echo $i
-java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE ./Raw_data/$i\.1.fq.gz ./Raw_data/$i\.2.fq.gz ./paired_trim_reads/$i\_R1_pair_trim.fastq.gz ./unpaired_trim_reads/$i\_R1_unpair_trim.fastq.gz ./paired_trim_reads/$i\_R2_pair_trim.fastq.gz ./unpaired_trim_reads/$i\_R2_unpair_trim.fastq.gz -threads 10 -phred33 ILLUMINACLIP:/apps/eb/Trimmomatic/0.39-Java-1.8.0_144/adapters/NexteraPE-PE.fa:2:30:10:2:TRUE LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:100
+java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE ./Raw_data/$i\.1.fq.gz ./Raw_data/$i\.2.fq.gz ./paired_trim_reads/$i\_R1_pair_trim.fastq.gz ./unpaired_trim_reads/$i\_R1_unpair_trim.fastq.gz ./paired_trim_reads/$i\_R2_pair_trim.fastq.gz ./unpaired_trim_reads/$i\_R2_unpair_trim.fastq.gz -threads 10 -phred33 ILLUMINACLIP:/apps/eb/Trimmomatic/0.39-Java-1.8.0_144/adapters/NexteraPE-PE.fa:2:30:10:2:TRUE LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:75
 done

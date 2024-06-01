@@ -30,8 +30,22 @@ This loops through the samples and counts the raw reads in the fastq files
 
 Third script - 2_reformat_raw_read_counts.sh
 
-This reformats the reads so that they can be pasted into an excel sheet
-Uses a java program that was compiled with Java v13.0.2
+This reformats the reads so that they can be pasted into an excel sheet. You will want to use reformat_Read_Counts.class with Java version v13.0.2 if you can. This is the already compiled program.
+
+Goes from this format:
+sample_1
+1,000
+1,000
+sample_2
+1,000
+1,000
+
+to this format:
+Sample	Read1 Counts	Read2 Counts
+sample_1	1,000	1,000
+sample_2	1,000	1,000
+
+reformat_Read_Counts.java - is the non-compiled code. You can recompile this with any java version and then it will run with that Java version. Only recompile if you can not access Java v13.0.2 
 
 Fourth script - 3_trim.sh
 

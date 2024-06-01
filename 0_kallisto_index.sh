@@ -19,4 +19,4 @@ cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 #define directory
 input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup'
 
-kallisto index -i sequences.kallisto_idx $input/14_crypto_genomes_no_mask.fasta
+kallisto index -i sequences.kallisto_idx $input/14_crypto_genomes_clean.fasta 

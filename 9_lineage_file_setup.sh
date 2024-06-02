@@ -14,6 +14,6 @@ module load Java/13.0.2
 ##Will need to make lineage folder with your strain_key.txt and lineage_file_setup.class file inside of it
 
 #Set directory to execute script
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/lineage_files
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024/lineage_files
 
 java lineage_file_setup strain_key.txt

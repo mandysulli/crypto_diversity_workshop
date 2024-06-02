@@ -75,8 +75,32 @@ Ninth script - 8_kallisto_move.sh
 This is the script that moves them all together.
 After this script you can export the abundance.tsv files out pf the cluster and use them with the R script provided to make estimated abundance figures (See below).
 
+tenth script - 9_lineage_file_setup.sh
 
+This script sets up the texts files that allow for species separation. 
 
+You will need a strain_key.txt that has the headers of the reference sequences in the first column and the strain associated with that sequence in the second column. Other data can be present.
+
+To execute this script:
+make a directory that named lineage_files
+move lineage_file_setup.class and the strain_key.txt into the folder
+Then run the script.
+
+The output should be text files with the species name form the second column as the files name. Each file will contain the the headers in the first column that are associated with that species.
+
+Example:
+file name - C_andersoni.txt
+inside C_andersoni.txt:
+lcl|C_andersoni-LRBS01000121.1
+lcl|C_andersoni-LRBS01000027.1
+lcl|C_andersoni-LRBS01000095.1
+lcl|C_andersoni-LRBS01000131.1
+lcl|C_andersoni-LRBS01000092.1
+etc...
+
+These will be used in next script. 
+
+There should also be a All_strain_name.txt file that lists all the species that are present in the strain_key.txt. They will be in a line so that they can be used in the next script.
 
 https://www.samformat.info/sam-format-flag
 
@@ -86,7 +110,7 @@ https://www.samformat.info/sam-format-flag
 To visualize the estimated abundance of your samples you will need:
 - The R markdown script provided: Kallisto_crypto_diversity_viz.Rmd
 - The folder with the abundance tsv files. 
-- A species key
+- A species key - Kallisto_key.tsv
 
 Create a folder and put all of the things listed above in it. Then open the Kallisto_crypto_diversity_viz.Rmd file and follow the instructions within it.
 

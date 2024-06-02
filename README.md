@@ -17,11 +17,11 @@ We will use the whole genome, without masking the repeats.
  This script indexes our reference genomes to create a reference databse
  We used the reference genomes that were not masked in this case
 
-Second script - 1_count_raw.sh
+ ### Second script - 1_count_raw.sh
 
 This loops through the samples and counts the raw reads in the fastq files
 
-Third script - 2_reformat_raw_read_counts.sh
+ ### Third script - 2_reformat_raw_read_counts.sh
 
 This reformats the reads so that they can be pasted into an excel sheet. You will want to use reformat_Read_Counts.class with Java version v13.0.2 if you can. This is the already compiled program.
 
@@ -40,35 +40,43 @@ sample_2	1,000	1,000
 
 reformat_Read_Counts.java - is the non-compiled code. You can recompile this with any java version and then it will run with that Java version. Only recompile if you can not access Java v13.0.2 
 
-Fourth script - 3_trim.sh
+ ### Fourth script - 3_trim.sh
 
 This script trims off the Nextera adapters and quality filters the reads.
 
-Fifth script - 4_count_trim.sh
+ ### Fifth script - 4_count_trim.sh
 
 Script is set up the same as the script that counts the raw reads. 
 We want to count the trimmed reads to be sure that we are not loosing a large number of reads in during trimming and quality filtering.
 
-Sixth script - 5_reformat_trim_read_count
+ ### Sixth script - 5_reformat_trim_read_count
 
 This script reformats the reads from the previous script so that they are easily pasted into an excel sheet
 
-Seventh script - 6_kallisto_quant_pseudobam.sh
+ ### Seventh script - 6_kallisto_quant_pseudobam.sh
 
 This script uses Kallisto to quantify the estimated number of reads per reference genome. This is how we will get our estimated abundance values.
 It is also set up to give us a pseudobam file which is what we will use to separate the reads. 
 Outputs files into folder by sample (which is really inconvenient) .
 
-Eight script - 7_kallisto_rename.sh
+ ### Eight script - 7_kallisto_rename.sh
 
 This script renames the output files to have there sample name included. This way we can move them together into one folder.
 
-Ninth script - 8_kallisto_move.sh
+ ### Ninth script - 8_kallisto_move.sh
 
 This is the script that moves them all together.
 After this script you can export the abundance.tsv files out pf the cluster and use them with the R script provided to make estimated abundance figures (See below).
 
-tenth script - 9_lineage_file_setup.sh
+ # Run R script
+To visualize the estimated abundance of your samples you will need:
+- The R markdown script provided: Kallisto_crypto_diversity_viz.Rmd
+- The folder with the abundance tsv files. 
+- A species key - Kallisto_key.tsv
+
+Create a folder and put all of the things listed above in it. Then open the Kallisto_crypto_diversity_viz.Rmd file and follow the instructions within it.
+
+ ### tenth script - 9_lineage_file_setup.sh
 
 This script sets up the texts files that allow for species separation. 
 
@@ -96,14 +104,3 @@ These will be used in next script.
 There should also be a All_strain_name.txt file that lists all the species that are present in the strain_key.txt. They will be in a line so that they can be used in the next script.
 
 https://www.samformat.info/sam-format-flag
-
-
-
-## Run R script
-To visualize the estimated abundance of your samples you will need:
-- The R markdown script provided: Kallisto_crypto_diversity_viz.Rmd
-- The folder with the abundance tsv files. 
-- A species key - Kallisto_key.tsv
-
-Create a folder and put all of the things listed above in it. Then open the Kallisto_crypto_diversity_viz.Rmd file and follow the instructions within it.
-

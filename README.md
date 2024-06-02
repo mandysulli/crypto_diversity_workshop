@@ -69,7 +69,7 @@ This is the script that moves them all together.
 
 *After this script you can export the abundance.tsv files out pf the cluster and use them with the R script provided to make estimated abundance figures (See below).*
 
- ### tenth script - 9_lineage_file_setup.sh
+ ### Tenth script - 9_lineage_file_setup.sh
 
 This script sets up the texts files that allow for species separation. 
 
@@ -97,6 +97,13 @@ These will be used in next script.
 There should also be a All_strain_name.txt file that lists all the species that are present in the strain_key.txt. They will be in a line so that they can be used in the next script.
 
 https://www.samformat.info/sam-format-flag
+
+ ### Eleventh script - 10_kallisto_pseudobam_read_separation.sh
+ 
+ This script separates the reads in the psuedobam files created by kallisto, using the species text files created in the previous step. 
+ Use the list of species within the All_strain_name.txt in line 72 of this script. 
+ 
+ ### Twelfth script - 
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:

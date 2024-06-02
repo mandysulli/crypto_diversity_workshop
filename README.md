@@ -12,7 +12,7 @@ We will use the whole genome, without masking the repeats.
  
  # Run StrainSort Curated
  
-First script - 0_kallisto_index.sh
+ ## First script - 0_kallisto_index.sh
  
  This script indexes our reference genomes to create a reference databse
  We used the reference genomes that were not masked in this case

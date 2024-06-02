@@ -66,6 +66,7 @@ This script renames the output files to have there sample name included. This wa
  ### Ninth script - 8_kallisto_move.sh
 
 This is the script that moves them all together.
+
 *After this script you can export the abundance.tsv files out pf the cluster and use them with the R script provided to make estimated abundance figures (See below).*
 
  ### tenth script - 9_lineage_file_setup.sh

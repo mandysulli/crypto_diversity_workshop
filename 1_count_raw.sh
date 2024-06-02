@@ -8,7 +8,7 @@
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mandyh@uga.edu
+#SBATCH --mail-user=email@uga.edu
 
 #set directory 
 cd /scratch/mandyh/crypto_diversity_test_04.01.2024/Raw_data

@@ -8,7 +8,7 @@
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mandyh@uga.edu
+#SBATCH --mail-user=email@uga.edu
 
 module load Trimmomatic/0.39-Java-13
 

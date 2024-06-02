@@ -7,7 +7,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --mail-user=mandyh@email.edu
+#SBATCH --mail-user=email@uga.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 ##This can take a fair amount of memory and time

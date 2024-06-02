@@ -8,7 +8,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --mail-user=mandyh@uga.edu
+#SBATCH --mail-user=email@uga.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 module load kallisto/0.48.0-gompi-2022a

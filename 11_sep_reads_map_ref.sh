@@ -7,7 +7,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --mail-user=mandyh@email.edu
+#SBATCH --mail-user=email@uga.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 module load BBMap/39.01-GCC-11.3.0
@@ -19,9 +19,9 @@ cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024
 mkdir sep_read_alignment_ref
 
 #define directory
-ref='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
-input='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/species_specific_reads_fastq'
-output='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/sep_read_alignment_ref'
+ref='/scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup/ref_genomes'
+input='/scratch/mandyh/crypto_diversity_test_04.01.2024/species_specific_reads_fastq'
+output='/scratch/mandyh/crypto_diversity_test_04.01.2024/sep_read_alignment_ref'
 
 ### Get the strain used for x from the "All_strain_names.txt" file created by lineage_file_stepup.class
 ### add unmapped to end

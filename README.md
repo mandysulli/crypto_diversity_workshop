@@ -103,7 +103,10 @@ https://www.samformat.info/sam-format-flag
  This script separates the reads in the psuedobam files created by kallisto, using the species text files created in the previous step. 
  Use the list of species within the All_strain_name.txt in line 72 of this script. 
  
- ### Twelfth script - 
+ ### Twelfth script - 11_sep_reads_ampped_ref.sh
+ 
+ Here we will map all of the reads from all of the samples that were divided in the previous step to the C. parvum genome. 
+ This will allow us to determine coverage stats and is needed for downstream analysis with GATK
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:

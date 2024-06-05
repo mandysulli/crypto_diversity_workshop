@@ -107,6 +107,8 @@ https://www.samformat.info/sam-format-flag
  
  Here we will map all of the reads from all of the samples that were divided in the previous step to the C. parvum genome. 
  This will allow us to determine coverage stats and is needed for downstream analysis with GATK
+ 
+ ### Thirteenth script - 
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:
@@ -116,3 +118,4 @@ To visualize the estimated abundance of your samples you will need:
 
 Create a folder and put all of the things listed above in it. Then open the Kallisto_crypto_diversity_viz.Rmd file and follow the instructions within it.
 
+# Reference Genomes

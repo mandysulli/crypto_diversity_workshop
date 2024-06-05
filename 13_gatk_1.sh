@@ -8,22 +8,22 @@
 #SBATCH --time=96:00:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --mail-user=mandyh@uga.edu
+#SBATCH --mail-user=email@uga.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 #loading the software in the cluster<200b>
 module load GATK/4.4.0.0-GCCcore-11.3.0-Java-17
 
 #set directory
-cd /scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024
+cd /scratch/mandyh/crypto_diversity_test_04.01.2024
 
 mkdir gatk_output
 mkdir ./gatk_output/minlen60
 
 #define directory
-bam_file='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/sep_read_alignment_ref'
-output='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/gatk_output/minlen60'
-ref='/scratch/mandyh/Crypto/crypto_diveristy_analysis_march2024/ref_genome_setup/ref_genomes'
+bam_file='/scratch/mandyh/crypto_diversity_test_04.01.2024/sep_read_alignment_ref'
+output='/scratch/mandyh/crypto_diversity_test_04.01.2024/gatk_output/minlen60'
+ref='/scratch/mandyh/crypto_diversity_test_04.01.2024/ref_genome_setup/ref_genomes'
 
 SAMPLES="C_twelve_large_C_parvum
 C_twelve_large_C_hominis

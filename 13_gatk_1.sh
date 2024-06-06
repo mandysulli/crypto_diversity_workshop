@@ -2,8 +2,8 @@
 #SBATCH --job-name=gatk_step_1
 #SBATCH --partition=iob_p
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=12
-#SBATCH --mem=5gb
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=20gb
 #SBATCH --export=NONE
 #SBATCH --time=96:00:00
 #SBATCH --output=%x_%j.out
@@ -85,7 +85,7 @@ for i in $SAMPLES
 do
 echo $i
 gatk --java-options "-Xmx20g"  AddOrReplaceReadGroups --INPUT $bam_file/$i\_sorted.bam --OUTPUT $bam_file/$i\_sorted.rg.bam --RGLB lib1 --RGPL illumina --RGPU unit1 --RGSM 20
-gatk --java-options "-Xmx20g" MarkDuplicatesSpark --spark-runner LOCAL --input $bam_file/$i\_sorted.rg.bam --output $output/$i\.md.bam --conf 'spark.executor.cores=12'
+gatk --java-options "-Xmx20g" MarkDuplicatesSpark --spark-runner LOCAL --input $bam_file/$i\_sorted.rg.bam --output $output/$i\.md.bam --conf 'spark.executor.cores=4'
 gatk --java-options "-Xmx20g" SetNmMdAndUqTags --INPUT $output/$i\.md.bam --OUTPUT $output/$i\.md.fx.bam --REFERENCE_SEQUENCE $ref/C_parvum_C.fasta
 gatk --java-options "-Xmx20g" BuildBamIndex --INPUT $output/$i\.md.fx.bam
 done

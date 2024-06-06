@@ -2,8 +2,8 @@
 #SBATCH --job-name=gatk_HaplotypeCaller
 #SBATCH --partition=iob_p
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=12
-#SBATCH --mem=5gb
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=20gb
 #SBATCH --export=NONE
 #SBATCH --time=96:00:00
 #SBATCH --output=%x_%j.out

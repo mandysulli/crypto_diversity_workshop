@@ -118,10 +118,14 @@ https://www.samformat.info/sam-format-flag
  Using samtools coverage command when obtain the breadth of coverage and depth of coverage for each sample. This will help us determine which samples will move forward in the analysis
  
  ### Fourteenth script - 13_gatk_1.sh
+ 
+ This steps sets read groups and marks duplicates.
   
  ### Fifteenth script - 14_gatk_haplo.sh
  
  ### Sixteenth script - 15_converttobed.sh
+ 
+ This script converts the reference genomes to bed format for the next step
  
  ### Seventeenth script - 16_gatk_genomics_db_import.sh
  

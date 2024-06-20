@@ -5,11 +5,16 @@
  Data, java programs and scripts saved here:
  /work/tcglab/Crypto_MHS/crypto_diversity_test_04.01.2024
  
- # Setup Reference genomes
-We will use the whole genome, without masking the repeats.
  
+ # Inputs Needed
+ 1. Paired end FASTQ-Formatted sequencing reads (of any length) obtained from a sample(s) of interest
+ 2. Compiled reference genomes or sequences (such as scaffolds) to be used as a reference database in fasta format. It is best to remove contamination before use.
+ 3. A strain key - must have the headers of the reference sequences in the first column and the strain associated with that sequence in the second column. Other data can be present.
+ 4. A single reference genome from the species of interest in fasta format. This will be used to gather coverage info and create a common reference between all samples for diversity analysis
 
- 
+ # Setup Reference genomes
+We will use the whole genome, without masking the repeats. Did remove contamination using NCBI's FCS tool.
+
  # Run StrainSort Curated
  
  ### First script - 0_kallisto_index.sh
@@ -103,12 +108,24 @@ https://www.samformat.info/sam-format-flag
  This script separates the reads in the psuedobam files created by kallisto, using the species text files created in the previous step. 
  Use the list of species within the All_strain_name.txt in line 72 of this script. 
  
- ### Twelfth script - 11_sep_reads_ampped_ref.sh
+ ### Twelfth script - 11_sep_reads_mapped_ref.sh
  
  Here we will map all of the reads from all of the samples that were divided in the previous step to the C. parvum genome. 
  This will allow us to determine coverage stats and is needed for downstream analysis with GATK
  
- ### Thirteenth script - 
+ ### Thirteenth script - 12_coverage_samtools.sh
+ 
+ Using samtools coverage command when obtain the breadth of coverage and depth of coverage for each sample. This will help us determine which samples will move forward in the analysis
+ 
+ ### Fourteenth script - 13_gatk_1.sh
+  
+ ### Fifteenth script - 14_gatk_haplo.sh
+ 
+ ### Sixteenth script - 15_converttobed.sh
+ 
+ ### Seventeenth script - 16_gatk_genomics_db_import.sh
+ 
+ ### 
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:

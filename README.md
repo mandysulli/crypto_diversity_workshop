@@ -123,13 +123,18 @@ https://www.samformat.info/sam-format-flag
   
  ### Fifteenth script - 14_gatk_haplo.sh
  
+ This script calls haplotypes from each of the inputs.
+ 
  ### Sixteenth script - 15_converttobed.sh
  
  This script converts the reference genomes to bed format for the next step
  
  ### Seventeenth script - 16_gatk_genomics_db_import.sh
  
- ### 
+ This script uses the haplotypes called from the inputs and the bed file from the previous step to create a database of the haplotypes called. This step also requires a sample map file that indicates where the GVCF files are. 
+ I provided and example file for this cause: gvcfs-for-db-import.sample_map
+ 
+ ### Eighteenth script - 
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:

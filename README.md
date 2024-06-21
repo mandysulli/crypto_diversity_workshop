@@ -134,7 +134,13 @@ https://www.samformat.info/sam-format-flag
  This script uses the haplotypes called from the inputs and the bed file from the previous step to create a database of the haplotypes called. This step also requires a sample map file that indicates where the GVCF files are. 
  I provided and example file for this cause: gvcfs-for-db-import.sample_map
  
- ### Eighteenth script - 
+ ### Eighteenth script - 17_gatk_GVCF.sh
+ 
+ This script creates one VCF file with all genotyped inputs.
+ 
+ ### Ninetennth script - 18_VCFtools_filtering.sh
+ 
+ Filtering the VCF file 
 
  # Run R script
 To visualize the estimated abundance of your samples you will need:
@@ -145,3 +151,6 @@ To visualize the estimated abundance of your samples you will need:
 Create a folder and put all of the things listed above in it. Then open the Kallisto_crypto_diversity_viz.Rmd file and follow the instructions within it.
 
 # Reference Genomes
+download from here:
+https://1drv.ms/u/s!AnQ1r7STGRvc0AaaIjauDy18eTS9?e=GveoOW
+

@@ -3,7 +3,7 @@
 #SBATCH --partition=iob_p
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=12
-#SBATCH --mem=20gb
+#SBATCH --mem=5gb
 #SBATCH --time=48:00:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
